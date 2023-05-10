@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
+        :root{
+            --fontePadrao: 'Raleway';
+            --weightPadrao: 400;
+        }
+        body{
+            background-color: rgba(0, 0, 0, 0.84);
+            margin: 0;
+            padding: 0;
+            z-index: -2;
+        }
+        section{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        section h1{
+            font-size: 60px;
+            color: white;
+            margin-top: 150px;
+            text-align: center;
+            font-family: var(--fontePadrao);
+            font-weight: 600;
+            margin-bottom: 150px;
+        }
+        .back{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 1150px;
+            height: 300px;
+            position: relative;
+            /* z-index: -1; */
+        }
+        .back img{
+            position: absolute;
+            z-index: 1;
+        }
+        .front{
+            background-color: #CA7900;
+            width: 100%;
+            border-radius: 37px;
+            margin-top: 70px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            
+        }
+        .front p{
+            margin-top: 60px;
+            font-size: 43px;
+            color: white;
+            font-family: var(--fontePadrao);
+            font-weight: var(--weightPadrao);
+        }
+        .front.button{
+            margin-top: 70px;
+            display: flex;
+        }
+        .testando button:hover{
+            cursor: pointer;
+        }
+        /* #teste{
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 40px;
+            width: 500px;
+        } */
+        /* .front:hover{
+            cursor: pointer;
+        } */
+        .CTAButton{
+            font-family: var(--fontePadrao);
+            font-size: 35px;
+            font-weight: 600;
+            width: 220px;
+            height: 70px;
+            color: white;
+            background-color: #CA8500;
+            border: 9px solid #F5F5F5;
+            border-radius: 15px;
+        }
+        
+        header{
+            display: none;
+        }
+        main{
+            display: none;
+        }
+        /* #teste{
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0) 30%,blue 30%, blue 100%);
+            width: 150px;
+            height: 200px;
+            margin-top: 100px;
+        }
+        #teste img{
+            
+            width: 100%;
+            margin-bottom: 50px;
+        } */
+    </style>
+</head>
+<body>
+    <section>
+        <h1>
+            Bem-vindo à<br>
+            Cervejaria do pericles Delivery
+        </h1>
+        
+        <div class="back">
+            <img src="cerveja.svg">
+            <div class="front">
+                
+                <p>Você é maior de 18 anos?</p>
+                <div class="testando" id="test">
+                    <button id="hov" class="CTAButton" type="button">Sim</button>
+                    <button class="CTAButton">Não</button>
+                    <button>Teste</button>
+                </div>
+                
+            </div>
+            
+        </div>
+       
+    </section>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="">A cervejaria</a></li>
+                <li><a href="">Nossas Cervejas</a></li>
+                <li><a href="">Delivery</a></li>
+                <li><a href="">
+                    Meu Carrinho
+                    <img src="">
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="back">
+            <img src="cerveja.svg">
+            <div class="front">
+                <p>Olá! Gostaria de te dar as boas vindas a Cervejaria do Pericles.<br>
+                    Aqui você encontrará as melhores bebidas do Brasil!
+                </p>
+            </div>
+        </div>
+        <div>
+            <button class="CTAButton">Entrar no site</button>
+        </div>
+    </main>
+</body>
+</html>
