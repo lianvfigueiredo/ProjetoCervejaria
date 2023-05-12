@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test_pointerevents</title>
+    <style>
+        div{
+            width:300px;
+            height: 300px;
+            background-color: black;
+        }
+        button:hover{
+            cursor:pointer;
+        }
+        #clickable{
+            pointer-events: initial;
+            width: 200px;
+            color:red;
+        }
+        #red{
+            width: 200px;
+            height: 300px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div style="z-index:-1; pointer-events:none;">
+          <button id="clickable">Clickable button</button>
+          <button id="non-clickable">Non-clickable button</button>
+        </div>
+      </section>
+      <div id="red"></div>
+</body>
+</html>
+
+<script>
+    var red = document.querySelector("#red").style;
+    var num = document.querySelector("#clickable");
+    console.log(num.style.color);
+    console.log(red)
+    console.log(window.getComputedStyle(document.querySelector("#clickable")).getPropertyValue("pointer-events"));
+    console.log(window.getComputedStyle(document.querySelector("#non-clickable")).getPropertyValue("pointer-events"));
+
+</script>

@@ -4,159 +4,235 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cervejaria do Péricles</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
         :root{
-            --fontePadrao: 'Raleway';
-            --weightPadrao: 400;
+            --style-font: 'Raleway';
+            --color-font: white;
+            --weight-font: '400'
         }
         body{
             background-color: rgba(0, 0, 0, 0.84);
-            margin: 0;
-            padding: 0;
-            z-index: -2;
+            margin:0;
+            padding:0;
         }
+
+        /* Tela Inicial da Página */
         section{
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        section h1{
-            font-size: 60px;
-            color: white;
-            margin-top: 150px;
-            text-align: center;
-            font-family: var(--fontePadrao);
-            font-weight: 600;
-            margin-bottom: 150px;
-        }
-        .back{
-            display: flex;
+            section h1{
+                font-size: 60px;
+                color: var(--color-font);
+                margin-top: 150px;
+                text-align: center;
+                font-family: var(--style-font);
+                font-weight: 600;
+                margin-bottom: 150px;
+            }
+            /* Estilização da Caixa de Texto Principal */
+            .back{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                width: 1150px;
+            }
+                .back img{
+                    position: absolute;
+            }
+                .front{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    background-color: #CA7900;
+                    width: 100%;
+                    border-radius: 37px;
+                    margin-top: 70px;
+            }
+                    .front p{
+                        margin-top: 60px;
+                        font-size: 43px;
+                        color: var(--color-font);
+                        font-family: var(--style-font);
+                        font-weight: var(--weight-font);
+            }
+                    #btn{
+                        display: flex;
+                        width: 500px;
+                        justify-content: space-between;
+            }
+            .CTAButton{
+                font-family: var(--style-font);
+                font-size: 35px;
+                font-weight: 600;
+                width: 220px;
+                height: 70px;
+                color: white;
+                background-color: #CA8500;
+                border: 9px solid #F5F5F5;
+                border-radius: 15px;
+                margin-bottom: 50px;
+            }
+            button:hover{
+                cursor:pointer;
+            }
+
+        /* Tela Principal */
+        main{
+            display:none;
             flex-direction: column;
             align-items: center;
-            width: 1150px;
-            height: 300px;
-            position: relative;
-            /* z-index: -1; */
         }
-        .back img{
-            position: absolute;
-            z-index: 1;
-        }
-        .front{
+        main header{
             background-color: #CA7900;
             width: 100%;
-            border-radius: 37px;
-            margin-top: 70px;
+            height: 90px;
+            margin:0;
+        }
+        main header nav{
+            margin: 25px 60px 25px 60px;
+        }
+        #nave{
             display: flex;
-            flex-direction: column;
             align-items: center;
-            position: relative;
-            
-        }
-        .front p{
-            margin-top: 60px;
-            font-size: 43px;
-            color: white;
-            font-family: var(--fontePadrao);
-            font-weight: var(--weightPadrao);
-        }
-        .front.button{
-            margin-top: 70px;
-            display: flex;
-        }
-        .testando button:hover{
-            cursor: pointer;
-        }
-        /* #teste{
-            display: flex;
+            list-style-type:none;
+            width: 50%;
             justify-content: space-between;
-            padding-bottom: 40px;
-            width: 500px;
+            /* justify-content: space-around; */
+        }
+        /* #nave li:not(:first-child){
+            margin-right:50px;
         } */
-        /* .front:hover{
-            cursor: pointer;
+        #nave li:last-child{
+            position: absolute;
+            right:60px;
+        }
+        a{
+            margin:0;
+        }
+        /* #nav li:last-child a {
+  margin-left: auto;
+} */
+        /* #nav:not(#last1){
+            justify-content: flex-start;
+        }
+        #last1{
+            display: flex;
+            justify-content: flex-end;
         } */
-        .CTAButton{
-            font-family: var(--fontePadrao);
-            font-size: 35px;
-            font-weight: 600;
-            width: 220px;
-            height: 70px;
-            color: white;
-            background-color: #CA8500;
-            border: 9px solid #F5F5F5;
-            border-radius: 15px;
-        }
-        
-        header{
-            display: none;
-        }
-        main{
-            display: none;
-        }
-        /* #teste{
-            background-image: linear-gradient(to bottom, rgba(0,0,0,0) 30%,blue 30%, blue 100%);
-            width: 150px;
-            height: 200px;
-            margin-top: 100px;
-        }
-        #teste img{
+        /* #nav li:last-child a{
+            justify-content: flex-end;
+        } */
+        /* ul:last-child{
+            justify-content: end;
+            margin-right:0;
+        } */
+        a{
+            font-family: var(--style-font);
+            font-size: 33px;
+            color: var(--color-font);
+            font-weight: var(--weight-font);
+            margin:0;
             
-            width: 100%;
-            margin-bottom: 50px;
-        } */
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+        }
+        #entrar{
+            margin-top: 100px;
+            background-color: #CA7900;
+            width: 380px;
+        }
+        main .back{
+            margin-top: 180px;
+        }
+        main .front p{
+            font-size: 34px;
+            padding: 12px 0;
+        }
+        #menor p{
+            margin-bottom: 65px;
+        }
+        #last{
+            /* margin-left:250px */
+        }
     </style>
 </head>
 <body>
     <section>
         <h1>
             Bem-vindo à<br>
-            Cervejaria do pericles Delivery
+            Cervejaria do Pericles Delivery
         </h1>
-        
         <div class="back">
             <img src="cerveja.svg">
             <div class="front">
-                
                 <p>Você é maior de 18 anos?</p>
-                <div class="testando" id="test">
-                    <button id="hov" class="CTAButton" type="button">Sim</button>
-                    <button class="CTAButton">Não</button>
-                    <button>Teste</button>
+                <div id="btn">
+                    <button class="CTAButton" onclick="maiorde18()">Sim</button>
+                    <button class="CTAButton" onclick="menorde18()">Não</button>
                 </div>
-                
             </div>
-            
         </div>
-       
     </section>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="">A cervejaria</a></li>
-                <li><a href="">Nossas Cervejas</a></li>
-                <li><a href="">Delivery</a></li>
-                <li><a href="">
-                    Meu Carrinho
-                    <img src="">
-                </a></li>
-            </ul>
-        </nav>
-    </header>
     <main>
-        <div class="back">
-            <img src="cerveja.svg">
-            <div class="front">
-                <p>Olá! Gostaria de te dar as boas vindas a Cervejaria do Pericles.<br>
-                    Aqui você encontrará as melhores bebidas do Brasil!
-                </p>
+        <header>
+            <nav>
+                <ul id="nave">
+                    <li><a>A Cervejaria</a></li>
+                    <li><a>Nossas Cervejas</a></li>
+                    <li><a>Delivery</a></li>
+
+                    <li id="last1"><a id="last">
+                        Meu Carrinho<img src="carrinho.svg">
+                    </a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Tela para Maiores de 18 -->
+        <section id="maior"> 
+            <div class="back">
+                <img src="cerveja.svg">
+                <div class="front">
+                    <p>Olá! Gostaria de te dar boas vindas a Cervejaria do Pericles. <br>
+                        Aqui você encontrará as melhores bebidas do Brasil!</p>
+                </div>
             </div>
-        </div>
-        <div>
-            <button class="CTAButton">Entrar no site</button>
-        </div>
+            <button id="entrar" class="CTAButton">Entrar no Site</button>
+        </section>
+
+        <!-- Tela para Menores de 18 -->
+        <section id="menor">
+            <div class="back">
+                <img src="cerveja.svg">
+                <div class="front">
+                    <p>Sinto muito, mas este site só é permitido para maiores de 18 anos! :(</p>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 </html>
+
+<script>
+
+    function maiorde18(){
+        document.querySelector("section").style.display = "none";
+        document.querySelector("#menor").style.display = "none";
+        document.querySelector("main").style.display = "flex";
+
+    }
+    function menorde18(){
+        document.querySelector("section").style.display = "none";
+        document.querySelector("#maior").style.display = "none";
+        document.querySelector("main").style.display = "flex";
+    }
+
+</script>
