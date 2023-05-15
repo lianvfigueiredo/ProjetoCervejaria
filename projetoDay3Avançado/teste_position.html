@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: gray;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        body div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 250px;
+            text-align: center;
+        }
+        #img{
+            width: 140px;
+            height: 140px;
+            /* border: 30px solid rgba(165, 146, 146, 0.3);
+            background-size: cover;
+            background-image: url("assets/images/vinho.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            */ overflow: hidden; /*
+            background-origin: border-box;
+            background-clip: border-box; */
+            
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* object-position:left; */
+            /* padding:-20px; */
+            /* width: 100%; */
+            
+            /* background-origin: border-box;
+            background-clip: border-box; */
+        }
+        p{
+            color: white;
+            font-size: 35px;
+            text-align: center;
+            margin: 0;
+        }
+        button{
+                font-size: 35px;
+                width: 220px;
+                height: 70px;
+                color: white;
+                background-color: #CA8500;
+                border: 9px solid #F5F5F5;
+                border-radius: 15px;
+                margin-bottom: 50px;
+            }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="img">
+            <img src="assets/images/vinho.svg">
+        </div>
+        <p>
+            Vinho Tinto<br>
+            R$ 80,00
+        </p>
+        <button>Comprar</button>
+    </div>
+</body>
+</html>

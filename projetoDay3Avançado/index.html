@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cervejaria do Péricles</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
+        :root{
+            --style-font: 'Raleway';
+            --color-font: white;
+            --weight-font: '400'
+        }
+        body{
+            background-color: rgba(0, 0, 0, 0.84);
+            margin:0;
+            padding:0;
+        }
+
+        /* Tela Inicial da Página */
+        #firstScreen{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+            #firstScreen h1{
+                font-size: 60px;
+                color: var(--color-font);
+                margin-top: 150px;
+                text-align: center;
+                font-family: var(--style-font);
+                font-weight: 600;
+                margin-bottom: 150px;
+            }
+            /* Estilização da Caixa de Texto Principal */
+            .back{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                width: 1150px;
+            }
+                .back img{
+                    position: absolute;
+            }
+                .front{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    background-color: #CA7900;
+                    width: 100%;
+                    border-radius: 37px;
+                    margin-top: 70px;
+            }
+                    .front p{
+                        margin-top: 60px;
+                        font-size: 43px;
+                        color: var(--color-font);
+                        font-family: var(--style-font);
+                        font-weight: var(--weight-font);
+            }
+                    #btn{
+                        display: flex;
+                        width: 500px;
+                        justify-content: space-between;
+            }
+            .CTAButton{
+                font-family: var(--style-font);
+                font-size: 35px;
+                font-weight: 600;
+                width: 220px;
+                height: 70px;
+                color: white;
+                background-color: #CA8500;
+                border: 9px solid #F5F5F5;
+                border-radius: 15px;
+                margin-bottom: 50px;
+            }
+            button:hover{
+                cursor:pointer;
+            }
+
+        /* Tela Principal */
+        main{
+            display:none;
+            flex-direction: column;
+            align-items: center;
+        }
+        main header{
+            background-color: #CA7900;
+            width: 100%;
+            height: 90px;
+            margin:0;
+        }
+        main header nav{
+            margin: 25px 60px 25px 60px;
+        }
+        #nave{
+            display: flex;
+            align-items: center;
+            list-style-type:none;
+            width: 50%;
+            justify-content: space-between;
+            /* justify-content: space-around; */
+        }
+        /* #nave li:not(:first-child){
+            margin-right:50px;
+        } */
+        #nave li:last-child{
+            position: absolute;
+            right:60px;
+        }
+        a{
+            margin:0;
+        }
+        /* #nav li:last-child a {
+  margin-left: auto;
+} */
+        /* #nav:not(#last1){
+            justify-content: flex-start;
+        }
+        #last1{
+            display: flex;
+            justify-content: flex-end;
+        } */
+        /* #nav li:last-child a{
+            justify-content: flex-end;
+        } */
+        /* ul:last-child{
+            justify-content: end;
+            margin-right:0;
+        } */
+        a{
+            font-family: var(--style-font);
+            font-size: 33px;
+            color: var(--color-font);
+            font-weight: var(--weight-font);
+            margin:0;
+            
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+        }
+        #entrar{
+            margin-top: 100px;
+            background-color: #CA7900;
+            width: 380px;
+        }
+        main .back{
+            margin-top: 180px;
+        }
+        main .front p{
+            font-size: 34px;
+            padding: 12px 0;
+        }
+        #menor p{
+            margin-bottom: 65px;
+        }
+        #last{
+            /* margin-left:250px */
+        }
+        .produtos{
+            width:100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .produtos div{
+            display: flex;
+            /* margin: 30px; */
+            /* position: relative; */
+            top: 150px;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: white;
+            font-family: var(--style-font);
+            font-size: 24px;
+        }
+        .produtos div:not(:first-child){
+            margin-left: 20px;
+        }
+        .imgs{
+            width: 130px;
+            height: 210px;
+            margin:10px;
+        }
+        .imgs img{
+            width: 100%;
+            height: 100%;
+            /* border: 5px solid rgba(255, 0, 0, 0.5); */
+            margin:0;
+            position: relative;
+            object-fit: contain;
+        }
+        .produtos div p{
+            font-size: 20px;
+            margin-top: 0;
+        }
+        #total{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <section id="firstScreen">
+        <h1>
+            Bem-vindo à<br>
+            Cervejaria do Pericles Delivery
+        </h1>
+        <div class="back">
+            <img src="assets/images/cerveja.svg">
+            <div class="front">
+                <p>Você é maior de 18 anos?</p>
+                <div id="btn">
+                    <button class="CTAButton" onclick="maiorde18()">Sim</button>
+                    <button class="CTAButton" onclick="menorde18()">Não</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <main>
+        <header>
+            <nav>
+                <ul id="nave">
+                    <li><a>A Cervejaria</a></li>
+                    <li><a>Nossas Cervejas</a></li>
+                    <li><a>Delivery</a></li>
+
+                    <li id="last1"><a id="last">
+                        Meu Carrinho<img src="assets/images/carrinho.svg">
+                    </a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Tela Principal de Compra -->
+        <section id="principal">
+            <!-- Boas Vindas -->
+            <div class="back">
+                <img src="assets/images/cerveja.svg">
+                <div class="front">
+                    <p>Olá! Gostaria de te dar boas vindas à Cervejaria do Pericles. <br>
+                        Escolha a bebida que mais te agrada:</p>
+                </div>
+            </div>
+            
+            <!-- Tela para Maiores de 18 -->
+            <div class="produtos" id="maior18">
+                <div>
+                    <div class="imgs">
+                        <img style="scale: 1.8; top: 0px;" src="assets/images/vinho.svg">
+                    </div>
+                    <p>Vinho Tinto<br>
+                    R$ 80,00</p>
+                    <button class="CTAButton" onclick="comprar('R$ 80,00')">Comprar</button>
+                </div>
+                <div>
+                    <div class="imgs">
+                        <img style="bottom: 0px" src="assets/images/heineken.svg">
+                    </div>
+                    <p>Cerveja Heineken<br>
+                    R$ 20,00</p>
+                    <button class="CTAButton" onclick="comprar('R$ 20,00')">Comprar</button>
+                </div>
+                <div>
+                    <div class="imgs">
+                        <img style="top:10px" src="assets/images/refri.svg">
+                    </div>
+                    <p>Refrigerante Guaraná<br>
+                    R$ 10,00</p>
+                    <button class="CTAButton" onclick="comprar('R$ 10,00')">Comprar</button>
+                </div>
+            </div>
+
+            <!-- Tela para Menores de 18 -->
+            <div class="produtos" id="menor18">
+                <div>
+                    <div class="imgs">
+                        <img style="top:10px" src="assets/images/refri.svg">
+                    </div>
+                    <p>Refrigerante Guaraná<br>
+                    R$ 10,00</p>
+                    <button class="CTAButton" onclick="comprar('R$ 10,00')">Comprar</button>
+                </div>
+            </div>
+        </section>
+   
+        <!-- Tela do Valor Total -->
+        <section id="total">
+            <div class="back">
+                <img src="assets/images/cerveja.svg">
+                <div class="front">
+                    <p>Olá!<br>
+                    O total a ser pago é:<br>
+                     <b><span id="valorTotal"></span></b>   </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
+
+<script>
+
+    function maiorde18(){
+        document.querySelector("#firstScreen").style.display = "none";
+        document.querySelector("main").style.display = "flex";
+        document.querySelector("#menor18").style.display = "none";
+
+    }
+    function menorde18(){
+        document.querySelector("#firstScreen").style.display = "none";
+        document.querySelector("main").style.display = "flex";
+        document.querySelector("#maior18").style.display = "none";
+    }
+    function comprar(a){
+        var x = a;
+        document.querySelector("#principal").style.display = "none";
+        document.querySelector("#total").style.display = "flex";
+        document.querySelector("#valorTotal").textContent = x;
+    }
+
+</script>
